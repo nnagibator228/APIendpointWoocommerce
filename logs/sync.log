@@ -1,0 +1,19 @@
+00:57:20 | sync started.
+12:48:38 | sync started.
+12:51:00 | sync started.
+12:52:34 | sync started.
+12:56:35 | sync started.
+13:04:05 | sync started.
+13:11:36 | sync started.
+13:16:09 | sync started.
+13:16:35 | sync started.
+13:18:12 | sync started.
+13:19:04 | sync started.
+13:22:26 | sync started.
+current bulk product quantity: 3186
+current woocomm product quantity: 3180
+
+{'code': 'db_insert_error', 'message': 'Не удалось вставить элемент в базу данных', 'data': {'status': 400}}
+{'code': 'woocommerce_rest_cannot_delete', 'message': 'Невозможно удалить категорию товаров по умолчанию.', 'data': {'status': 500}}
+----------- categories synchronized. -----------
+13:33:02 | sync started.

@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  driver:
+    image: plzdontcry/woocommsync:latest
+    hostname: woocommsync
+    depends_on:
+      - webp_converter
+    volumes:
+      - /var/log/woocommsync/:/logs
+    secrets:
+      - woocomm_consumer_key
+      - woocomm_secret_key
+      - bulk_token
+      - ctoken
+
+  static_host:
+    image: flashspys/nginx-static
+    ports:
+      - 8080:80
+    volumes:
+      - /static/woocomm/:/static
+
+  webp_converter:
+    image: plzdontcry/webp_converter:latest
+    hostname: wconverter
+    depends_on:
+      - static_host
+    volumes:
+      - /static/woocomm/:/webp
+    secrets:
+      - ctoken
+
+secrets:
+  ctoken:
+    external: true
+  woocomm_consumer_key:
+    external: true
+  woocomm_secret_key:
+    external: true
+  bulk_token:
+    external: true
